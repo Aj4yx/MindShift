@@ -1,0 +1,14 @@
+name: MindShift
+main: com.mindshift.mindshiftplugin.MindShiftPlugin
+version: 1.0
+description: MindShift enhances Minecraft gameplay by changing mob AI, making them more realistic and challenging. Mobs react to surroundings and navigate terrain better with improved combat tactics and coordination. Players can expect a new challenge with MindShift.
+
+commands:
+  mindshift:
+    description: On/Off.
+    usage: /mindshift
+
+permissions:
+  mindshiftplugin.mindshiftop:
+    description: MindShift OP.
+    default: op
