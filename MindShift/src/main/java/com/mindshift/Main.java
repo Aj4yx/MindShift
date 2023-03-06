@@ -43,19 +43,46 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     // Command handler for the /mindshift command
-    @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("mindshift")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+@Override
+public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    if (cmd.getName().equalsIgnoreCase("mindshift")) {
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
 
-                // Code to toggle MindShift on or off for the player
+            // Get the current status of MindShift
+            boolean isEnabled = getMindShiftStatus();
+
+            // Toggle MindShift on or off
+            if (isEnabled) {
+                setMindShiftStatus(false);
+                player.sendMessage("MindShift has been turned off.");
             } else {
-                sender.sendMessage("Only players can use this command");
+                setMindShiftStatus(true);
+                player.sendMessage("MindShift has been turned on.");
             }
-            return true;
+        } else {
+            sender.sendMessage("Only players can use this command");
         }
-        return false;
+        return true;
     }
+    return false;
+}
 
+/**
+ * Returns the current status of MindShift.
+ *
+ * @return true if MindShift is enabled, false otherwise
+ */
+private boolean getMindShiftStatus() {
+    // Code to get the current status of MindShift
+    return true; // Placeholder return value
+}
+
+/**
+ * Sets the status of MindShift to the specified value.
+ *
+ * @param enabled true to enable MindShift, false to disable it
+ */
+private void setMindShiftStatus(boolean enabled) {
+    // Code to set the status of MindShift
 }
